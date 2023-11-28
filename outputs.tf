@@ -1,7 +1,7 @@
-output "aws_lb" {
+output "alb" {
   value = aws_lb.main
 }
-output "aws_lb_listener" {
+output "lb_listener" {
   value = aws_lb_listener.main
 }
 
