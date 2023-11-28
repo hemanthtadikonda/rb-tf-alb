@@ -47,6 +47,3 @@ resource "aws_lb_listener" "main" {
   }
 }
 
-data "dns_aaaa_record_set" "internal" {
-  host = lookup(lookup(aws_lb.main, "internal" , null ),"dns_name" ,null )
-}
