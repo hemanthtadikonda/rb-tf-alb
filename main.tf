@@ -66,12 +66,12 @@ resource "aws_lb_listener" "frontend" {
   }
 }
 
-#resource "aws_security_group_rule" "frontend" {
-#  count             = var.internal ? 0 : 1
-#  type              = "ingress"
-#  from_port         = 80
-#  to_port           = 80
-#  protocol          = "tcp"
-#  cidr_blocks       = var.sg_ingress_cidr
-#  security_group_id = aws_security_group.main.id
-#}
+resource "aws_security_group_rule" "frontend" {
+  count             = var.internal ? 0 : 1
+  type              = "ingress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = var.sg_ingress_cidr
+  security_group_id = aws_security_group.main.id
+}
